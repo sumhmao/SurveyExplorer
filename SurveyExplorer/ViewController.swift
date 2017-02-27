@@ -14,6 +14,10 @@ class ViewController: BasedViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.refreshData()
     }
     
@@ -22,11 +26,14 @@ class ViewController: BasedViewController {
     }
     
     func refreshData() {
+        self.showSpinnerWithText("Loading data...")
         ApiManager.sharedInstance.getSurveys(completion: { (succeed:Bool, surveys:[Survey]?, message:String?) in
             
             guard succeed else {
                 if let errorMsg = message {
-                    print("Error: " + errorMsg)
+                    self.showAlertWithText(errorMsg)
+                } else {
+                    self.hideSpinner()
                 }
                 return
             }
@@ -35,7 +42,7 @@ class ViewController: BasedViewController {
                 self.surveys.removeAll()
                 self.surveys.append(contentsOf: data)
             }
-            
+            self.hideSpinner()
         })
     }
     
