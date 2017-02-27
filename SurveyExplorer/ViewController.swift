@@ -8,18 +8,34 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: BasedViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.refreshData()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func userTokenDidChange() {
+        self.refreshData()
     }
-
-
+    
+    func refreshData() {
+        ApiManager.sharedInstance.getSurveys(completion: { (succeed:Bool, surveys:[Survey]?, message:String?) in
+            
+            guard succeed else {
+                if let errorMsg = message {
+                    print("Error: " + errorMsg)
+                }
+                return
+            }
+            
+            if let data = surveys {
+                data.forEach { (survey:Survey) in
+                    
+                }
+            }
+            
+        })
+    }
+    
 }
-
