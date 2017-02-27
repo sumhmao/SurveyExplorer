@@ -14,9 +14,13 @@ class BasedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(userTokenDidChange), name: NSNotification.Name(rawValue: UserContext.tokenChangedNotificationName), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(userTokenDidClear), name: NSNotification.Name(rawValue: UserContext.tokenClearedNotificationName), object: nil)
     }
     
     func userTokenDidChange() {}
+    func userTokenDidClear() {
+        self.showAlertWithText("Failed to load data", subtitle: "Tap to hide and try refreshing later")
+    }
     
     func showSpinnerWithText(_ spinnerText:String) {
         SwiftSpinner.useContainerView(self.view)
@@ -25,7 +29,7 @@ class BasedViewController: UIViewController {
     
     func showAlertWithText(_ alertText:String, subtitle:String = "Tap to hide") {
         SwiftSpinner.useContainerView(self.view)
-        SwiftSpinner.show(alertText).addTapHandler({
+        SwiftSpinner.show(alertText, animated: false).addTapHandler({
             self.hideSpinner()
         }, subtitle: subtitle)
     }

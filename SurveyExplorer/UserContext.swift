@@ -13,6 +13,7 @@ class UserContext: NSObject {
     
     static let sharedInstance = UserContext()
     static let tokenChangedNotificationName = "UserTokenChangedNotification"
+    static let tokenClearedNotificationName = "UserTokenClearedNotification"
     
     let accountName = "UserOAuthContext"
     let tokenKey = "tokenKey"
@@ -60,5 +61,20 @@ class UserContext: NSObject {
         }
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: UserContext.tokenChangedNotificationName) , object: nil)
+    }
+    
+    func clearUserToken() {
+        self.accessToken = nil
+        self.tokenExpiredDate = nil
+        
+        do {
+            if let _ = Locksmith.loadDataForUserAccount(userAccount: self.accountName) {
+                try Locksmith.deleteDataForUserAccount(userAccount: self.accountName)
+            }
+        } catch (let e) {
+            print("Failed to clear user token : \(e)")
+        }
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: UserContext.tokenClearedNotificationName) , object: nil)
     }
 }

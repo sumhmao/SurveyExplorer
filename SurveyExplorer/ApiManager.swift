@@ -89,6 +89,8 @@ class ApiManager: NSObject {
                 if let newToken = token {
                     UserContext.sharedInstance.setUserToken(token: newToken, expiredDate: expiredDate)
                 }
+            } else {
+                UserContext.sharedInstance.clearUserToken()
             }
             
         }, parameters: parameters, requiredToken: false)
