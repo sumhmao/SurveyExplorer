@@ -48,9 +48,15 @@ class UserContext: NSObject {
         self.tokenExpiredDate = Date(timeIntervalSince1970: expiredDate)
         
         do {
-            try Locksmith.saveData(data: [self.tokenKey:token, self.expiredKey:expiredDate], forUserAccount: self.accountName)
-        } catch {
-            print("Failed to save token data")
+            if var data = Locksmith.loadDataForUserAccount(userAccount: self.accountName) {
+                data[self.tokenKey] = token
+                data[self.expiredKey] = expiredDate
+                try Locksmith.updateData(data: data, forUserAccount: self.accountName)
+            } else {
+                try Locksmith.saveData(data: [self.tokenKey:token, self.expiredKey:expiredDate], forUserAccount: self.accountName)
+            }
+        } catch (let e) {
+            print("Failed to save token data : \(e)")
         }
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: UserContext.tokenChangedNotificationName) , object: nil)

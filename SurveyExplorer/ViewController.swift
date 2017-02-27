@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: BasedViewController {
     
+    var surveys = [Survey]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.refreshData()
@@ -30,9 +32,8 @@ class ViewController: BasedViewController {
             }
             
             if let data = surveys {
-                data.forEach { (survey:Survey) in
-                    
-                }
+                self.surveys.removeAll()
+                self.surveys.append(contentsOf: data)
             }
             
         })

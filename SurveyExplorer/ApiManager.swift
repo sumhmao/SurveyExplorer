@@ -102,8 +102,13 @@ class ApiManager: NSObject {
                 return
             }
             
-            // initialize survey objects
-            print(jsonValue)
+            var surveys = [Survey]()
+            for (_, subJson) in jsonValue {
+                if let survey = Survey(json: subJson) {
+                    surveys.append(survey)
+                }
+            }
+            completion(succeed, surveys, nil)
         }, parameters: ["access_token":UserContext.sharedInstance.accessToken!])
     }
     
