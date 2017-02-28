@@ -25,7 +25,6 @@
                         <rect key="frame" x="19" y="52" width="192" height="23"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="Vhh-Pe-RP2"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="23" id="eqh-6B-hAv"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -38,6 +37,7 @@
                 <constraint firstItem="zrk-ux-XUt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="52" id="9QA-hK-igP"/>
                 <constraint firstAttribute="trailing" secondItem="2Uo-eH-Kjz" secondAttribute="trailing" id="BBk-l3-KWX"/>
                 <constraint firstItem="2Uo-eH-Kjz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="K1y-Vh-ohD"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zrk-ux-XUt" secondAttribute="bottom" constant="10" id="SOH-PQ-U4d"/>
                 <constraint firstItem="zrk-ux-XUt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="19" id="Thv-QK-96N"/>
                 <constraint firstAttribute="bottom" secondItem="2Uo-eH-Kjz" secondAttribute="bottom" id="cKt-Og-17u"/>
                 <constraint firstItem="2Uo-eH-Kjz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="iJH-cH-lMp"/>

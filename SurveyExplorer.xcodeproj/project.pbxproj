@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		111EF2881E65C6A900E2FD50 /* QuestionAnswerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 111EF2871E65C6A900E2FD50 /* QuestionAnswerView.xib */; };
 		1159283B1E62C45300ADCC2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1159283A1E62C45300ADCC2D /* AppDelegate.swift */; };
 		1159283D1E62C45300ADCC2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1159283C1E62C45300ADCC2D /* ViewController.swift */; };
 		115928401E62C45300ADCC2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1159283E1E62C45300ADCC2D /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		11CC7D991E658558002F42BE /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC7D981E658558002F42BE /* QuestionViewController.swift */; };
 		11CC7D9C1E65B06A002F42BE /* QuestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC7D9A1E65B06A002F42BE /* QuestionCollectionViewCell.swift */; };
 		11CC7D9D1E65B06A002F42BE /* QuestionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11CC7D9B1E65B06A002F42BE /* QuestionCollectionViewCell.xib */; };
+		11CC7D9F1E65C039002F42BE /* QuestionAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CC7D9E1E65C039002F42BE /* QuestionAnswerView.swift */; };
 		47DFD0B397898141854FC6B8 /* Pods_SurveyExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FC5EB4DF7972CAEB29CF66 /* Pods_SurveyExplorer.framework */; };
 		F3A54AAF6FD76128EB832678 /* Pods_SurveyExplorerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF42C6DBA672DE349198AB6 /* Pods_SurveyExplorerTests.framework */; };
 /* End PBXBuildFile section */
@@ -40,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		111EF2871E65C6A900E2FD50 /* QuestionAnswerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionAnswerView.xib; sourceTree = "<group>"; };
 		115928371E62C45300ADCC2D /* SurveyExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurveyExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1159283A1E62C45300ADCC2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1159283C1E62C45300ADCC2D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +65,7 @@
 		11CC7D981E658558002F42BE /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		11CC7D9A1E65B06A002F42BE /* QuestionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionCollectionViewCell.swift; sourceTree = "<group>"; };
 		11CC7D9B1E65B06A002F42BE /* QuestionCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionCollectionViewCell.xib; sourceTree = "<group>"; };
+		11CC7D9E1E65C039002F42BE /* QuestionAnswerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionAnswerView.swift; sourceTree = "<group>"; };
 		33FC5EB4DF7972CAEB29CF66 /* Pods_SurveyExplorer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurveyExplorer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		361F88FF485EC20947A50BEE /* Pods-SurveyExplorerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyExplorerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SurveyExplorerTests/Pods-SurveyExplorerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		39FF007740FFBABB7C0CA2BC /* Pods-SurveyExplorerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyExplorerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SurveyExplorerTests/Pods-SurveyExplorerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +94,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		111EF2861E65C2F900E2FD50 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				115980A71E6551FF00F264B0 /* SurveyCollectionViewCell.swift */,
+				115980A81E6551FF00F264B0 /* SurveyCollectionViewCell.xib */,
+				11CC7D9A1E65B06A002F42BE /* QuestionCollectionViewCell.swift */,
+				11CC7D9B1E65B06A002F42BE /* QuestionCollectionViewCell.xib */,
+			);
+			name = CollectionViewCells;
+			sourceTree = "<group>";
+		};
 		1159282E1E62C45200ADCC2D = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +131,7 @@
 				1159283A1E62C45300ADCC2D /* AppDelegate.swift */,
 				115980A31E65478500F264B0 /* Utilities */,
 				115980991E63E6FD00F264B0 /* ViewControllers */,
+				111EF2861E65C2F900E2FD50 /* CollectionViewCells */,
 				115980A61E6551CD00F264B0 /* CustomControls */,
 				115980941E62D46D00F264B0 /* Api */,
 				1159809C1E63E80500F264B0 /* Singletons */,
@@ -184,10 +200,8 @@
 		115980A61E6551CD00F264B0 /* CustomControls */ = {
 			isa = PBXGroup;
 			children = (
-				115980A71E6551FF00F264B0 /* SurveyCollectionViewCell.swift */,
-				115980A81E6551FF00F264B0 /* SurveyCollectionViewCell.xib */,
-				11CC7D9A1E65B06A002F42BE /* QuestionCollectionViewCell.swift */,
-				11CC7D9B1E65B06A002F42BE /* QuestionCollectionViewCell.xib */,
+				11CC7D9E1E65C039002F42BE /* QuestionAnswerView.swift */,
+				111EF2871E65C6A900E2FD50 /* QuestionAnswerView.xib */,
 			);
 			name = CustomControls;
 			sourceTree = "<group>";
@@ -302,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				111EF2881E65C6A900E2FD50 /* QuestionAnswerView.xib in Resources */,
 				115928451E62C45300ADCC2D /* LaunchScreen.storyboard in Resources */,
 				11CC7D9D1E65B06A002F42BE /* QuestionCollectionViewCell.xib in Resources */,
 				115928421E62C45300ADCC2D /* Assets.xcassets in Resources */,
@@ -424,6 +439,7 @@
 				11CC7D9C1E65B06A002F42BE /* QuestionCollectionViewCell.swift in Sources */,
 				115980961E62D4AD00F264B0 /* ApiManager.swift in Sources */,
 				1159809E1E63E83F00F264B0 /* UserContext.swift in Sources */,
+				11CC7D9F1E65C039002F42BE /* QuestionAnswerView.swift in Sources */,
 				115980A21E65446100F264B0 /* BasedNavigationController.swift in Sources */,
 				115980A01E648BAC00F264B0 /* Question.swift in Sources */,
 				115980A91E6551FF00F264B0 /* SurveyCollectionViewCell.swift in Sources */,

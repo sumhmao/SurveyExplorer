@@ -13,8 +13,6 @@ class QuestionViewController: BasedViewController, UICollectionViewDelegate, UIC
     var survey: Survey?
     
     @IBOutlet weak var collectionView: UICollectionView?
-    @IBOutlet weak var backButton: UIButton?
-    @IBOutlet weak var nextButton: UIButton?
     @IBOutlet weak var pageCountTitle: UILabel?
     
     override func viewDidLoad() {
@@ -45,36 +43,15 @@ class QuestionViewController: BasedViewController, UICollectionViewDelegate, UIC
     func initializeData() {
         if let currentData = self.survey {
             self.title = currentData.title
-            self.backButton?.isHidden = true
-            if currentData.questions.count <= 1 {
-                self.nextButton?.isHidden = true
-            }
             self.updatePageNo(currentPage: 1)
         }
     }
     
-    @IBAction func previousQuestion() {
-        if let pageNo = self.collectionView?.pageNo, (pageNo - 1) >= 0 {
-            let to = pageNo - 1
-            self.collectionView?.scrollPageFrom(page: pageNo, to: to)
-            self.nextButton?.isHidden = false
-            if to == 0 {
-                self.backButton?.isHidden = true
-            }
-            self.updatePageNo(currentPage: to + 1)
-        }
-    }
+    // MARK: Page Number
     
-    @IBAction func nextQuestion() {
-        if let pageNo = self.collectionView?.pageNo, (pageNo + 1) < (self.survey?.questions.count ?? 0) {
-            let to = pageNo + 1
-            self.collectionView?.scrollPageFrom(page: pageNo, to: to)
-            self.backButton?.isHidden = false
-            if to == ((self.survey?.questions.count ?? 0) - 1) {
-                self.nextButton?.isHidden = true
-            }
-            self.updatePageNo(currentPage: to + 1)
-        }
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageNo = self.collectionView?.pageNo ?? 0
+        self.updatePageNo(currentPage: pageNo + 1)
     }
     
     func updatePageNo(currentPage:Int) {
