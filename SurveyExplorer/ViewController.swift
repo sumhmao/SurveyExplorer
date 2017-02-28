@@ -21,11 +21,16 @@ class ViewController: BasedViewController {
         self.refreshData()
     }
     
+    override func customizeNavigationBar() {
+        super.customizeNavigationBar()
+        
+    }
+    
     override func userTokenDidChange() {
         self.refreshData()
     }
     
-    func refreshData() {
+    @IBAction func refreshData() {
         self.showSpinnerWithText("Loading data...")
         ApiManager.sharedInstance.getSurveys(completion: { (surveys:[Survey]?, error:String?) in
             
