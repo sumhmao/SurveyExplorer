@@ -32,6 +32,21 @@ enum DisplayType :String{
         }
         return .choice
     }
+    
+    var viewHeight: CGFloat {
+        get {
+            switch self {
+            case .intro, .nps, .outro, .choice:
+                return 0
+            case .star, .heart, .smiley:
+                return 50
+            case .textfield:
+                return 50
+            case .textarea:
+                return 128
+            }
+        }
+    }
 }
 
 class Question: NSObject {

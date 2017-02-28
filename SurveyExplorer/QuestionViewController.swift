@@ -80,7 +80,6 @@ class QuestionViewController: BasedViewController, UICollectionViewDelegate, UIC
         }
         return cell
     }
-    
 }
 
 private extension UICollectionView {
@@ -91,12 +90,6 @@ private extension UICollectionView {
             let currentPage = self.contentOffset.x / pageWidth
             return Int(currentPage)
         }
-    }
-    
-    func scrollPageFrom(page from:Int, to:Int) {
-        self.scrollToItem(at: IndexPath(row: to, section: 0),
-                          at: (from < to ? .left : .right),
-                          animated: true)
     }
     
 }

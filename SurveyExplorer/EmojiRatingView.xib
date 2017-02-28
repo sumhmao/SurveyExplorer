@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmojiRatingView" customModule="SurveyExplorer" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="251" height="47"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbP-vB-25i">
+                    <rect key="frame" x="5" y="5" width="44" height="37"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhA-pe-tco">
+                    <rect key="frame" x="54" y="5" width="44.5" height="37"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZY-38-BTz">
+                    <rect key="frame" x="103.5" y="5" width="44.5" height="37"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyT-Va-hmX">
+                    <rect key="frame" x="202" y="5" width="44" height="37"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkd-1v-ENR">
+                    <rect key="frame" x="153" y="5" width="44" height="37"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="zkd-1v-ENR" firstAttribute="width" secondItem="cbP-vB-25i" secondAttribute="width" id="0FU-s4-wYf"/>
+                <constraint firstItem="oyT-Va-hmX" firstAttribute="leading" secondItem="zkd-1v-ENR" secondAttribute="trailing" constant="5" id="3EB-5q-ldO"/>
+                <constraint firstAttribute="bottom" secondItem="PZY-38-BTz" secondAttribute="bottom" constant="5" id="7kR-bE-JhT"/>
+                <constraint firstItem="zkd-1v-ENR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="8Zt-Bb-I98"/>
+                <constraint firstItem="mhA-pe-tco" firstAttribute="width" secondItem="cbP-vB-25i" secondAttribute="width" id="BKe-PO-bfy"/>
+                <constraint firstItem="mhA-pe-tco" firstAttribute="leading" secondItem="cbP-vB-25i" secondAttribute="trailing" constant="5" id="O6h-mt-8xV"/>
+                <constraint firstAttribute="bottom" secondItem="zkd-1v-ENR" secondAttribute="bottom" constant="5" id="OCw-0G-IQf"/>
+                <constraint firstItem="PZY-38-BTz" firstAttribute="width" secondItem="cbP-vB-25i" secondAttribute="width" id="Ofu-lC-s87"/>
+                <constraint firstItem="cbP-vB-25i" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="PMK-6t-Zu0"/>
+                <constraint firstItem="cbP-vB-25i" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="UWN-Sk-7fk"/>
+                <constraint firstItem="PZY-38-BTz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="V70-qN-NHu"/>
+                <constraint firstAttribute="trailing" secondItem="oyT-Va-hmX" secondAttribute="trailing" constant="5" id="WET-CB-7CX"/>
+                <constraint firstItem="mhA-pe-tco" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="Y2A-dc-HuV"/>
+                <constraint firstItem="oyT-Va-hmX" firstAttribute="width" secondItem="cbP-vB-25i" secondAttribute="width" id="eWM-0o-G06"/>
+                <constraint firstItem="oyT-Va-hmX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="h7c-eD-lsR"/>
+                <constraint firstAttribute="bottom" secondItem="oyT-Va-hmX" secondAttribute="bottom" constant="5" id="sQh-it-Zbx"/>
+                <constraint firstAttribute="bottom" secondItem="mhA-pe-tco" secondAttribute="bottom" constant="5" id="sUt-py-eq6"/>
+                <constraint firstAttribute="bottom" secondItem="cbP-vB-25i" secondAttribute="bottom" constant="5" id="t2c-dx-Ngq"/>
+                <constraint firstItem="PZY-38-BTz" firstAttribute="leading" secondItem="mhA-pe-tco" secondAttribute="trailing" constant="5" id="wMh-wi-wwf"/>
+                <constraint firstItem="zkd-1v-ENR" firstAttribute="leading" secondItem="PZY-38-BTz" secondAttribute="trailing" constant="5" id="wia-ip-WgA"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-27.5" y="-218.5"/>
+        </view>
+    </objects>
+</document>

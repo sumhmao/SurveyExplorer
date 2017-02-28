@@ -10,18 +10,11 @@ import UIKit
 
 class QuestionAnswerView: UIView {
     
-    private(set) var displayType = DisplayType.intro
+    @IBOutlet weak var emojiRatingView: EmojiRatingView?
     
-    var viewHeight: CGFloat {
-        get {
-            switch self.displayType {
-            case .intro, .nps, .outro:
-                return 0
-            case .star, .heart, .smiley, .choice, .textarea, .textfield:
-                return 50
-            }
-        }
-    }
+    @IBOutlet weak var textFieldHeight: NSLayoutConstraint?
+    @IBOutlet weak var textAreaHeight: NSLayoutConstraint?
+    @IBOutlet weak var emojiRatingHeight: NSLayoutConstraint?
     
     override init (frame: CGRect) {
         super.init(frame: frame)
@@ -46,7 +39,47 @@ class QuestionAnswerView: UIView {
     }
     
     func initWithType(_ type: DisplayType) {
-        
+        self.textFieldHeight?.constant = 0
+        self.textAreaHeight?.constant = 0
+        self.emojiRatingHeight?.constant = 0
+        switch type {
+        case .textfield:
+            self.textFieldHeight?.constant = type.viewHeight
+            break
+        case .textarea:
+            self.textAreaHeight?.constant = type.viewHeight
+            break
+        case .star:
+            self.emojiRatingHeight?.constant = type.viewHeight
+            self.emojiRatingView?.emoji = "⭐"
+            self.emojiRatingView?.setValue(3)
+            break
+        case .heart:
+            self.emojiRatingHeight?.constant = type.viewHeight
+            self.emojiRatingView?.emoji = "❤️️"
+            self.emojiRatingView?.setValue(3)
+            break
+        case .smiley:
+            self.emojiRatingHeight?.constant = type.viewHeight
+            self.emojiRatingView?.emoji = "😀"
+            self.emojiRatingView?.setValue(3)
+            break
+        default:
+            break
+        }
+    }
+    
+    func viewHeightWithType(type: DisplayType) -> CGFloat {
+        switch type {
+        case .intro, .nps, .outro, .choice:
+            return 0
+        case .star, .heart, .smiley:
+            return self.emojiRatingHeight?.constant ?? 0
+        case .textfield:
+            return self.textFieldHeight?.constant ?? 0
+        case .textarea:
+            return self.textAreaHeight?.constant ?? 0
+        }
     }
     
 }

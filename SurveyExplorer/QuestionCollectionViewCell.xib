@@ -17,9 +17,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="230" height="334"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Uo-eH-Kjz">
+                    <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Uo-eH-Kjz">
                         <rect key="frame" x="0.0" y="0.0" width="230" height="334"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrk-ux-XUt">
                         <rect key="frame" x="19" y="52" width="192" height="23"/>
@@ -31,21 +32,33 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zg1-kg-rTk" customClass="QuestionAnswerView" customModule="SurveyExplorer" customModuleProvider="target">
+                        <rect key="frame" x="15" y="95" width="200" height="50"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="9bO-I0-cIq"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="zg1-kg-rTk" firstAttribute="top" secondItem="zrk-ux-XUt" secondAttribute="bottom" constant="20" id="1ph-bJ-T1a"/>
+                <constraint firstAttribute="trailing" secondItem="zg1-kg-rTk" secondAttribute="trailing" constant="15" id="6GN-CT-DqS"/>
                 <constraint firstItem="zrk-ux-XUt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="52" id="9QA-hK-igP"/>
                 <constraint firstAttribute="trailing" secondItem="2Uo-eH-Kjz" secondAttribute="trailing" id="BBk-l3-KWX"/>
                 <constraint firstItem="2Uo-eH-Kjz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="K1y-Vh-ohD"/>
-                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zrk-ux-XUt" secondAttribute="bottom" constant="10" id="SOH-PQ-U4d"/>
                 <constraint firstItem="zrk-ux-XUt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="19" id="Thv-QK-96N"/>
                 <constraint firstAttribute="bottom" secondItem="2Uo-eH-Kjz" secondAttribute="bottom" id="cKt-Og-17u"/>
+                <constraint firstItem="zg1-kg-rTk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="epB-1E-K4q"/>
                 <constraint firstItem="2Uo-eH-Kjz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="iJH-cH-lMp"/>
                 <constraint firstAttribute="trailing" secondItem="zrk-ux-XUt" secondAttribute="trailing" constant="19" id="mzv-bj-x3A"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zg1-kg-rTk" secondAttribute="bottom" constant="40" id="pdH-p9-anD"/>
             </constraints>
             <size key="customSize" width="230" height="334"/>
             <connections>
+                <outlet property="answerHeight" destination="9bO-I0-cIq" id="jTH-ul-Sjj"/>
                 <outlet property="backgroundImageView" destination="2Uo-eH-Kjz" id="2he-ab-tVC"/>
+                <outlet property="questionAnswerView" destination="zg1-kg-rTk" id="9xu-l7-fNU"/>
                 <outlet property="questionLabel" destination="zrk-ux-XUt" id="xKw-BE-Vp0"/>
             </connections>
             <point key="canvasLocation" x="24" y="46"/>
