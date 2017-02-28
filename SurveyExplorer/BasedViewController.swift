@@ -13,8 +13,16 @@ class BasedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.customizeNavigationBar()
         NotificationCenter.default.addObserver(self, selector: #selector(userTokenDidChange), name: NSNotification.Name(rawValue: UserContext.tokenChangedNotificationName), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(userTokenDidClear), name: NSNotification.Name(rawValue: UserContext.tokenClearedNotificationName), object: nil)
+    }
+    
+    func customizeNavigationBar() {
+        navigationController?.navigationBar.barTintColor = AppTheme.getAppColor(.NavyBlue)
+        if let titleColor = AppTheme.getAppColor(.WhiteText) {
+            navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: titleColor]
+        }
     }
     
     func userTokenDidChange() {}
@@ -23,12 +31,10 @@ class BasedViewController: UIViewController {
     }
     
     func showSpinnerWithText(_ spinnerText:String) {
-        SwiftSpinner.useContainerView(self.view)
         SwiftSpinner.show(spinnerText)
     }
     
     func showAlertWithText(_ alertText:String, subtitle:String = "Tap to hide") {
-        SwiftSpinner.useContainerView(self.view)
         SwiftSpinner.show(alertText, animated: false).addTapHandler({
             self.hideSpinner()
         }, subtitle: subtitle)

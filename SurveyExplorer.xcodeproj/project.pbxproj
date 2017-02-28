@@ -18,6 +18,8 @@
 		1159809B1E63E73300F264B0 /* BasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1159809A1E63E73300F264B0 /* BasedViewController.swift */; };
 		1159809E1E63E83F00F264B0 /* UserContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1159809D1E63E83F00F264B0 /* UserContext.swift */; };
 		115980A01E648BAC00F264B0 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1159809F1E648BAC00F264B0 /* Question.swift */; };
+		115980A21E65446100F264B0 /* BasedNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115980A11E65446100F264B0 /* BasedNavigationController.swift */; };
+		115980A51E6547AB00F264B0 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115980A41E6547AB00F264B0 /* AppTheme.swift */; };
 		47DFD0B397898141854FC6B8 /* Pods_SurveyExplorer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33FC5EB4DF7972CAEB29CF66 /* Pods_SurveyExplorer.framework */; };
 		F3A54AAF6FD76128EB832678 /* Pods_SurveyExplorerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF42C6DBA672DE349198AB6 /* Pods_SurveyExplorerTests.framework */; };
 /* End PBXBuildFile section */
@@ -48,6 +50,8 @@
 		1159809A1E63E73300F264B0 /* BasedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasedViewController.swift; sourceTree = "<group>"; };
 		1159809D1E63E83F00F264B0 /* UserContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserContext.swift; sourceTree = "<group>"; };
 		1159809F1E648BAC00F264B0 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		115980A11E65446100F264B0 /* BasedNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasedNavigationController.swift; sourceTree = "<group>"; };
+		115980A41E6547AB00F264B0 /* AppTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
 		33FC5EB4DF7972CAEB29CF66 /* Pods_SurveyExplorer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SurveyExplorer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		361F88FF485EC20947A50BEE /* Pods-SurveyExplorerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyExplorerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SurveyExplorerTests/Pods-SurveyExplorerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		39FF007740FFBABB7C0CA2BC /* Pods-SurveyExplorerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveyExplorerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SurveyExplorerTests/Pods-SurveyExplorerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				1159283A1E62C45300ADCC2D /* AppDelegate.swift */,
+				115980A31E65478500F264B0 /* Utilities */,
 				115980991E63E6FD00F264B0 /* ViewControllers */,
 				115980941E62D46D00F264B0 /* Api */,
 				1159809C1E63E80500F264B0 /* Singletons */,
@@ -141,8 +146,9 @@
 		115980991E63E6FD00F264B0 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1159283C1E62C45300ADCC2D /* ViewController.swift */,
+				115980A11E65446100F264B0 /* BasedNavigationController.swift */,
 				1159809A1E63E73300F264B0 /* BasedViewController.swift */,
+				1159283C1E62C45300ADCC2D /* ViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -153,6 +159,14 @@
 				1159809D1E63E83F00F264B0 /* UserContext.swift */,
 			);
 			name = Singletons;
+			sourceTree = "<group>";
+		};
+		115980A31E65478500F264B0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				115980A41E6547AB00F264B0 /* AppTheme.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		1C7067C8CCF4027F63EC957A /* Frameworks */ = {
@@ -380,8 +394,10 @@
 				1159283D1E62C45300ADCC2D /* ViewController.swift in Sources */,
 				115980981E62E41300F264B0 /* Survey.swift in Sources */,
 				1159809B1E63E73300F264B0 /* BasedViewController.swift in Sources */,
+				115980A51E6547AB00F264B0 /* AppTheme.swift in Sources */,
 				115980961E62D4AD00F264B0 /* ApiManager.swift in Sources */,
 				1159809E1E63E83F00F264B0 /* UserContext.swift in Sources */,
+				115980A21E65446100F264B0 /* BasedNavigationController.swift in Sources */,
 				115980A01E648BAC00F264B0 /* Question.swift in Sources */,
 				1159283B1E62C45300ADCC2D /* AppDelegate.swift in Sources */,
 			);
