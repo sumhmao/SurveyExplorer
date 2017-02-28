@@ -14,6 +14,7 @@ class QuestionViewController: BasedViewController, UICollectionViewDelegate, UIC
     
     @IBOutlet weak var collectionView: UICollectionView?
     @IBOutlet weak var pageCountTitle: UILabel?
+    @IBOutlet var saveButton: UIBarButtonItem?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class QuestionViewController: BasedViewController, UICollectionViewDelegate, UIC
         let backButton = UIBarButtonItem(image: UIImage(named: "back_white"), style: .plain, target: self, action: #selector(onBack))
         backButton.tintColor = UIColor.white
         self.navigationItem.leftBarButtonItem = backButton
+        self.navigationItem.rightBarButtonItem = nil
         
         self.styleCollectionView()
         self.initializeData()
@@ -37,7 +39,13 @@ class QuestionViewController: BasedViewController, UICollectionViewDelegate, UIC
     }
     
     func onBack() {
-        _ = self.navigationController?.popViewController(animated: true)
+        let refreshAlert = UIAlertController(title: "Leave", message: "Are you sure you want to leave?", preferredStyle: UIAlertControllerStyle.alert)
+        refreshAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
+            _ = self.navigationController?.popViewController(animated: true)
+        }))
+        refreshAlert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (action: UIAlertAction!) in
+        }))
+        present(refreshAlert, animated: true, completion: nil)
     }
     
     func initializeData() {
@@ -47,11 +55,26 @@ class QuestionViewController: BasedViewController, UICollectionViewDelegate, UIC
         }
     }
     
+    @IBAction func submitSurvey() {
+        let refreshAlert = UIAlertController(title: "Submit", message: "Submit data?", preferredStyle: UIAlertControllerStyle.alert)
+        refreshAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
+            _ = self.navigationController?.popViewController(animated: true)
+        }))
+        refreshAlert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (action: UIAlertAction!) in
+        }))
+        present(refreshAlert, animated: true, completion: nil)
+    }
+    
     // MARK: Page Number
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageNo = self.collectionView?.pageNo ?? 0
         self.updatePageNo(currentPage: pageNo + 1)
+        if (pageNo + 1 == self.survey?.questions.count ?? 0) {
+            self.navigationItem.rightBarButtonItem = self.saveButton
+        } else {
+            self.navigationItem.rightBarButtonItem = nil
+        }
     }
     
     func updatePageNo(currentPage:Int) {

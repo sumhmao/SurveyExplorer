@@ -149,10 +149,18 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="gge-89-Urh"/>
+                    <navigationItem key="navigationItem" title="Title" id="gge-89-Urh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="CBf-YI-ZVS">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="submitSurvey" destination="g22-4a-kjL" id="WSF-ja-5dO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="jvt-uV-wx7" id="uBl-pU-UQr"/>
                         <outlet property="pageCountTitle" destination="s3A-hm-6uz" id="sop-Au-990"/>
+                        <outlet property="saveButton" destination="CBf-YI-ZVS" id="esF-Th-f4q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4eF-4x-n7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
