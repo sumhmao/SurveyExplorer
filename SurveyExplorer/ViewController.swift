@@ -54,6 +54,7 @@ class ViewController: BasedViewController, UICollectionViewDelegate, UICollectio
                 self.surveys.removeAll()
                 self.surveys.append(contentsOf: data)
             }
+            
             self.hideSpinner()
             self.refreshButton?.isEnabled = true
             self.collectionView?.reloadData()
@@ -82,10 +83,14 @@ class ViewController: BasedViewController, UICollectionViewDelegate, UICollectio
         let currentPage = scrollView.contentOffset.y / pageHeight
         if (0.0 != fmodf(Float(currentPage), 1.0)) {
             self.pageControl?.currentPage = Int(currentPage) + 1
-        }
-        else {
+        } else {
             self.pageControl?.currentPage = Int(currentPage)
         }
+    }
+    
+    func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
+        self.pageControl?.currentPage = 0
+        return true
     }
     
     // MARK: UICollectionView Implementation

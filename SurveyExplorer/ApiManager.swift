@@ -56,7 +56,7 @@ class ApiManager: NSObject {
             .validate()
             .responseJSON { (response) -> Void in
                 guard response.result.isSuccess else {
-                    let errorMessage:String? = (response.result.error != nil) ? response.result.error!.localizedDescription : nil
+                    let errorMessage:String? = response.result.error?.localizedDescription ?? nil
                     callback(response.result.isSuccess, errorMessage, nil)
                     return
                 }
@@ -111,7 +111,7 @@ class ApiManager: NSObject {
                 }
             }
             completion(surveys, nil)
-        }, parameters: ["access_token":UserContext.sharedInstance.accessToken!])
+        }, parameters: ["access_token":UserContext.sharedInstance.accessToken ?? ""])
     }
     
 }

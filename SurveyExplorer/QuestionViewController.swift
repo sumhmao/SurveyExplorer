@@ -10,7 +10,7 @@ import UIKit
 
 class QuestionViewController: BasedViewController {
     
-    var survey: Survey!
+    var survey: Survey?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,9 @@ class QuestionViewController: BasedViewController {
     }
     
     func initializeData() {
-        self.title = self.survey.title
+        if let currentData = self.survey {
+            self.title = currentData.title
+        }
     }
     
 }
