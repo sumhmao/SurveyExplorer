@@ -52,20 +52,11 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="vua-o1-Doi"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="npo-yr-rwf">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="npo-yr-rwf" customClass="VerticalPageControl" customModule="SurveyExplorer" customModuleProvider="target">
                                 <rect key="frame" x="338" y="10" width="37" height="583"/>
-                                <subviews>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="a34-u8-95J">
-                                        <rect key="frame" x="0.0" y="0.0" width="37" height="583"/>
-                                    </pageControl>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="a34-u8-95J" firstAttribute="leading" secondItem="npo-yr-rwf" secondAttribute="leading" id="1F6-0F-woU"/>
-                                    <constraint firstAttribute="bottom" secondItem="a34-u8-95J" secondAttribute="bottom" id="63S-96-zgP"/>
                                     <constraint firstAttribute="width" constant="37" id="8aR-PX-EhB"/>
-                                    <constraint firstItem="a34-u8-95J" firstAttribute="top" secondItem="npo-yr-rwf" secondAttribute="top" id="BHl-gD-PX3"/>
-                                    <constraint firstAttribute="trailing" secondItem="a34-u8-95J" secondAttribute="trailing" id="S2U-x0-Vov"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -91,7 +82,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="biW-aH-uRf" id="GyK-6X-E1U"/>
-                        <outlet property="pageControl" destination="a34-u8-95J" id="znL-Ix-Te9"/>
+                        <outlet property="pageControl" destination="npo-yr-rwf" id="h27-8x-jXb"/>
                         <outlet property="refreshButton" destination="yla-cg-jtE" id="82Z-IH-qAL"/>
                         <segue destination="g22-4a-kjL" kind="show" identifier="showSurvey" id="Bhb-He-eJ6"/>
                     </connections>

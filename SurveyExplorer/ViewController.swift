@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ViewController: BasedViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SurveyCollectionViewCellDelegate {
+class ViewController: BasedViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SurveyCollectionViewCellDelegate, VerticalPageControlDelegate {
     
     @IBOutlet weak var refreshButton: UIBarButtonItem?
     @IBOutlet weak var collectionView: UICollectionView?
-    @IBOutlet weak var pageControl: UIPageControl?
+    @IBOutlet weak var pageControl: VerticalPageControl?
     
     var surveys = [Survey]()
     
@@ -29,10 +29,7 @@ class ViewController: BasedViewController, UICollectionViewDelegate, UICollectio
     
     func styleCollectionView() {
         self.collectionView?.register(UINib(nibName: "SurveyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: SurveyCollectionViewCell.identifier)
-        self.pageControl?.hidesForSinglePage = true
-        self.pageControl?.currentPage = 0
-        self.pageControl?.numberOfPages = 0
-        self.pageControl?.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
+        self.pageControl?.delegate = self
     }
     
     @IBAction func refreshData() {
@@ -60,20 +57,18 @@ class ViewController: BasedViewController, UICollectionViewDelegate, UICollectio
             self.collectionView?.reloadData()
             
             if self.surveys.count > 0 {
-                self.pageControl?.currentPage = 0
-                self.pageControl?.numberOfPages = self.surveys.count
-                if let dots = self.pageControl?.subviews {
-                    for (dot) in dots {
-                        dot.layer.borderWidth = 1
-                        dot.layer.borderColor = UIColor.white.cgColor
-                        dot.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
-                    }
-                }
+                self.pageControl?.setTotalPageNo(total: self.surveys.count)
                 self.collectionView?.scrollToItem(at: IndexPath(row: 0, section: 0),
                                                   at: .top,
                                                   animated: false)
             }
         })
+    }
+    
+    func stylePageControlDot(dot: UIView) {
+        dot.layer.borderWidth = 1
+        dot.layer.borderColor = UIColor.white.cgColor
+        dot.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
     }
     
     // MARK: PageControl Animation
