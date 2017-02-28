@@ -17,10 +17,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="324" height="457"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Lf-Kh-SSL">
+                    <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Lf-Kh-SSL">
                         <rect key="frame" x="0.0" y="0.0" width="324" height="457"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pcr-2b-hSe">
+                        <rect key="frame" x="0.0" y="0.0" width="324" height="457"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.2986408390410959" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dht-ye-bkB">
                         <rect key="frame" x="20" y="90" width="284" height="40"/>
                         <constraints>
@@ -53,6 +57,9 @@
                                 <integer key="value" value="17"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="takeSurvey" destination="gTV-IL-0wX" eventType="touchUpInside" id="hfF-8B-y0f"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>
@@ -60,7 +67,9 @@
             <constraints>
                 <constraint firstItem="AGP-0t-1Ii" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="6oZ-I2-z2j"/>
                 <constraint firstItem="0qk-Dd-wlX" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="8mr-cJ-Zda"/>
+                <constraint firstItem="Pcr-2b-hSe" firstAttribute="bottom" secondItem="5Lf-Kh-SSL" secondAttribute="bottom" id="FNt-1S-oPs"/>
                 <constraint firstAttribute="bottom" secondItem="0qk-Dd-wlX" secondAttribute="bottom" constant="45" id="GSA-qg-1nd"/>
+                <constraint firstItem="Pcr-2b-hSe" firstAttribute="leading" secondItem="5Lf-Kh-SSL" secondAttribute="leading" id="IwL-J0-1hy"/>
                 <constraint firstItem="dht-ye-bkB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="LdL-4p-GVa"/>
                 <constraint firstAttribute="trailing" secondItem="dht-ye-bkB" secondAttribute="trailing" constant="20" id="MTd-53-eou"/>
                 <constraint firstAttribute="trailing" secondItem="5Lf-Kh-SSL" secondAttribute="trailing" id="Qvx-nb-aK9"/>
@@ -70,7 +79,9 @@
                 <constraint firstAttribute="trailing" secondItem="AGP-0t-1Ii" secondAttribute="trailing" constant="20" id="ixh-11-0Rq"/>
                 <constraint firstAttribute="bottom" secondItem="5Lf-Kh-SSL" secondAttribute="bottom" id="jBq-Sp-wqm"/>
                 <constraint firstItem="5Lf-Kh-SSL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mzv-gl-XRM"/>
+                <constraint firstItem="Pcr-2b-hSe" firstAttribute="trailing" secondItem="5Lf-Kh-SSL" secondAttribute="trailing" id="oeg-cb-Hgw"/>
                 <constraint firstItem="AGP-0t-1Ii" firstAttribute="top" secondItem="dht-ye-bkB" secondAttribute="bottom" constant="5" id="ppo-8l-71N"/>
+                <constraint firstItem="Pcr-2b-hSe" firstAttribute="top" secondItem="5Lf-Kh-SSL" secondAttribute="top" id="yoH-GF-E7s"/>
             </constraints>
             <size key="customSize" width="324" height="457"/>
             <connections>

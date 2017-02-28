@@ -19,7 +19,7 @@ class AppTheme: NSObject {
     static func getAppColor(_ color:AppColor) -> UIColor? {
         switch color {
         case .MainBackground:
-            return UIColor.init(red: 0.7, green: 0.7, blue: 0.7, alpha: 1)
+            return UIColor.init(red: 0.2, green: 0.2, blue: 0.2, alpha: 1)
         case .NavyBlue:
             return UIColor.init(red: 0.06, green: 0.07, blue: 0.14, alpha: 1)
         case .WhiteText:

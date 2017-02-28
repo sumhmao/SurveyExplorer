@@ -8,9 +8,11 @@
 
 import UIKit
 
-class ViewController: BasedViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class ViewController: BasedViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SurveyCollectionViewCellDelegate {
     
+    @IBOutlet weak var refreshButton: UIBarButtonItem?
     @IBOutlet weak var collectionView: UICollectionView?
+    @IBOutlet weak var pageControl: UIPageControl?
     
     var surveys = [Survey]()
     
@@ -18,10 +20,6 @@ class ViewController: BasedViewController, UICollectionViewDelegate, UICollectio
         super.viewDidLoad()
         self.view.backgroundColor = AppTheme.getAppColor(.MainBackground)
         self.styleCollectionView()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         self.refreshData()
     }
     
@@ -31,10 +29,14 @@ class ViewController: BasedViewController, UICollectionViewDelegate, UICollectio
     
     func styleCollectionView() {
         self.collectionView?.register(UINib(nibName: "SurveyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: SurveyCollectionViewCell.identifier)
-        
+        self.pageControl?.hidesForSinglePage = true
+        self.pageControl?.currentPage = 0
+        self.pageControl?.numberOfPages = 0
+        self.pageControl?.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 2)
     }
     
     @IBAction func refreshData() {
+        self.refreshButton?.isEnabled = false
         self.showSpinnerWithText("Refreshing data...")
         ApiManager.sharedInstance.getSurveys(completion: { (surveys:[Survey]?, error:String?) in
             
@@ -44,6 +46,7 @@ class ViewController: BasedViewController, UICollectionViewDelegate, UICollectio
                 } else {
                     self.hideSpinner()
                 }
+                self.refreshButton?.isEnabled = true
                 return
             }
             
@@ -52,14 +55,37 @@ class ViewController: BasedViewController, UICollectionViewDelegate, UICollectio
                 self.surveys.append(contentsOf: data)
             }
             self.hideSpinner()
+            self.refreshButton?.isEnabled = true
             self.collectionView?.reloadData()
             
             if self.surveys.count > 0 {
+                self.pageControl?.currentPage = 0
+                self.pageControl?.numberOfPages = self.surveys.count
+                if let dots = self.pageControl?.subviews {
+                    for (dot) in dots {
+                        dot.layer.borderWidth = 1
+                        dot.layer.borderColor = UIColor.white.cgColor
+                        dot.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+                    }
+                }
                 self.collectionView?.scrollToItem(at: IndexPath(row: 0, section: 0),
                                                   at: .top,
                                                   animated: false)
             }
         })
+    }
+    
+    // MARK: PageControl Animation
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageHeight = scrollView.frame.size.height
+        let currentPage = scrollView.contentOffset.y / pageHeight
+        if (0.0 != fmodf(Float(currentPage), 1.0)) {
+            self.pageControl?.currentPage = Int(currentPage) + 1
+        }
+        else {
+            self.pageControl?.currentPage = Int(currentPage)
+        }
     }
     
     // MARK: UICollectionView Implementation
@@ -78,6 +104,7 @@ class ViewController: BasedViewController, UICollectionViewDelegate, UICollectio
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:SurveyCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: SurveyCollectionViewCell.identifier, for: indexPath) as! SurveyCollectionViewCell
+        cell.delegate = self
         if indexPath.row < self.surveys.count {
             let data = self.surveys[indexPath.row]
             cell.setData(survey: data)
@@ -85,8 +112,16 @@ class ViewController: BasedViewController, UICollectionViewDelegate, UICollectio
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+    func didTapSurvey(_ survey: Survey) {
+        self.performSegue(withIdentifier: "showSurvey", sender: survey)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showSurvey" {
+            if let nextVC = segue.destination as? QuestionViewController {
+                nextVC.survey = sender as! Survey?
+            }
+        }
     }
     
 }

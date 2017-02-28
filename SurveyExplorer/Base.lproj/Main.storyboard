@@ -36,7 +36,7 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="biW-aH-uRf">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="biW-aH-uRf">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cJg-BO-8Z7">
@@ -60,13 +60,32 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="vua-o1-Doi"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="npo-yr-rwf">
+                                <rect key="frame" x="338" y="10" width="37" height="583"/>
+                                <subviews>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="a34-u8-95J">
+                                        <rect key="frame" x="0.0" y="0.0" width="37" height="583"/>
+                                    </pageControl>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="a34-u8-95J" firstAttribute="leading" secondItem="npo-yr-rwf" secondAttribute="leading" id="1F6-0F-woU"/>
+                                    <constraint firstAttribute="bottom" secondItem="a34-u8-95J" secondAttribute="bottom" id="63S-96-zgP"/>
+                                    <constraint firstAttribute="width" constant="37" id="8aR-PX-EhB"/>
+                                    <constraint firstItem="a34-u8-95J" firstAttribute="top" secondItem="npo-yr-rwf" secondAttribute="top" id="BHl-gD-PX3"/>
+                                    <constraint firstAttribute="trailing" secondItem="a34-u8-95J" secondAttribute="trailing" id="S2U-x0-Vov"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="npo-yr-rwf" secondAttribute="trailing" id="6ZJ-M2-CPg"/>
                             <constraint firstItem="biW-aH-uRf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="HXV-vT-KH5"/>
                             <constraint firstItem="biW-aH-uRf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="QNg-Rl-9df"/>
                             <constraint firstAttribute="trailing" secondItem="biW-aH-uRf" secondAttribute="trailing" id="TZ0-La-ZQF"/>
+                            <constraint firstItem="npo-yr-rwf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="bOS-Zo-7kp"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="biW-aH-uRf" secondAttribute="bottom" id="icd-jP-8zC"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="npo-yr-rwf" secondAttribute="bottom" constant="10" id="qsc-w9-OmC"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -80,11 +99,32 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="biW-aH-uRf" id="GyK-6X-E1U"/>
+                        <outlet property="pageControl" destination="a34-u8-95J" id="znL-Ix-Te9"/>
+                        <outlet property="refreshButton" destination="yla-cg-jtE" id="82Z-IH-qAL"/>
+                        <segue destination="g22-4a-kjL" kind="show" identifier="showSurvey" id="Bhb-He-eJ6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
+        </scene>
+        <!--Question View Controller-->
+        <scene sceneID="4ON-Cm-sdH">
+            <objects>
+                <viewController id="g22-4a-kjL" customClass="QuestionViewController" customModule="SurveyExplorer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qPf-qZ-ceV"/>
+                        <viewControllerLayoutGuide type="bottom" id="QGF-m7-S9a"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JcE-kk-Xhk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4eF-4x-n7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="790" y="38"/>
         </scene>
     </scenes>
 </document>

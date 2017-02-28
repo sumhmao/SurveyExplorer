@@ -31,10 +31,12 @@ class BasedViewController: UIViewController {
     }
     
     func showSpinnerWithText(_ spinnerText:String) {
+        SwiftSpinner.useContainerView(self.view)
         SwiftSpinner.show(spinnerText)
     }
     
     func showAlertWithText(_ alertText:String, subtitle:String = "Tap to hide") {
+        SwiftSpinner.useContainerView(self.view)
         SwiftSpinner.show(alertText, animated: false).addTapHandler({
             self.hideSpinner()
         }, subtitle: subtitle)
