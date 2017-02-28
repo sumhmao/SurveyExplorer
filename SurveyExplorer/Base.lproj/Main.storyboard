@@ -108,7 +108,7 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
-        <!--Question View Controller-->
+        <!--Title-->
         <scene sceneID="4ON-Cm-sdH">
             <objects>
                 <viewController id="g22-4a-kjL" customClass="QuestionViewController" customModule="SurveyExplorer" customModuleProvider="target" sceneMemberID="viewController">
@@ -121,6 +121,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="gge-89-Urh"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4eF-4x-n7C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
