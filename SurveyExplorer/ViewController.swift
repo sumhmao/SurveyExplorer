@@ -27,10 +27,10 @@ class ViewController: BasedViewController {
     
     func refreshData() {
         self.showSpinnerWithText("Loading data...")
-        ApiManager.sharedInstance.getSurveys(completion: { (succeed:Bool, surveys:[Survey]?, message:String?) in
+        ApiManager.sharedInstance.getSurveys(completion: { (surveys:[Survey]?, error:String?) in
             
-            guard succeed else {
-                if let errorMsg = message {
+            guard error == nil else {
+                if let errorMsg = error {
                     self.showAlertWithText(errorMsg)
                 } else {
                     self.hideSpinner()

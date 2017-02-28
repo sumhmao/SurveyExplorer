@@ -96,11 +96,11 @@ class ApiManager: NSObject {
         }, parameters: parameters, requiredToken: false)
     }
     
-    func getSurveys(completion: @escaping (Bool, [Survey]?, String?) -> Void) {
+    func getSurveys(completion: @escaping ([Survey]?, String?) -> Void) {
         self.makeRequest(url: getEndpointUrl("surveys.json"), method: .get, callback: { (succeed:Bool, message:String?, json:JSON?) in
             
-            guard let jsonValue = json else {
-                completion(succeed, nil, message)
+            guard succeed, let jsonValue = json else {
+                completion(nil, message)
                 return
             }
             
@@ -110,7 +110,7 @@ class ApiManager: NSObject {
                     surveys.append(survey)
                 }
             }
-            completion(succeed, surveys, nil)
+            completion(surveys, nil)
         }, parameters: ["access_token":UserContext.sharedInstance.accessToken!])
     }
     
