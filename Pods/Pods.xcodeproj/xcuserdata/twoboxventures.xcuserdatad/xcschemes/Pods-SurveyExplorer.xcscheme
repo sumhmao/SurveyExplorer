@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "05ABF15A284482347D6A879EB28EF72E"
+               BlueprintIdentifier = "8DB3C686F8F0C84573F7E70FA115B82B"
                BuildableName = "Pods_SurveyExplorer.framework"
                BlueprintName = "Pods-SurveyExplorer"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "05ABF15A284482347D6A879EB28EF72E"
+            BlueprintIdentifier = "8DB3C686F8F0C84573F7E70FA115B82B"
             BuildableName = "Pods_SurveyExplorer.framework"
             BlueprintName = "Pods-SurveyExplorer"
             ReferencedContainer = "container:Pods.xcodeproj">

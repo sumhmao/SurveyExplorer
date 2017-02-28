@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="survey_collection_view_cell" id="gTV-IL-0wX" customClass="SurveyCollectionViewCell" customModule="SurveyExplorer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="324" height="457"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="324" height="457"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Lf-Kh-SSL">
+                        <rect key="frame" x="0.0" y="0.0" width="324" height="457"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dht-ye-bkB">
+                        <rect key="frame" x="20" y="90" width="284" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="XAO-u8-MWd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGP-0t-1Ii">
+                        <rect key="frame" x="20" y="135" width="284" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="gRq-XO-SUi"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qk-Dd-wlX">
+                        <rect key="frame" x="86" y="378" width="153" height="34"/>
+                        <color key="backgroundColor" red="1" green="0.18969278585187266" blue="0.39767795817909402" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="153" id="1Ov-sC-1dN"/>
+                            <constraint firstAttribute="height" constant="34" id="XmN-02-Zc5"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <state key="normal" title="Take the survey"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="17"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="AGP-0t-1Ii" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="6oZ-I2-z2j"/>
+                <constraint firstItem="0qk-Dd-wlX" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="8mr-cJ-Zda"/>
+                <constraint firstAttribute="bottom" secondItem="0qk-Dd-wlX" secondAttribute="bottom" constant="45" id="GSA-qg-1nd"/>
+                <constraint firstItem="dht-ye-bkB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="LdL-4p-GVa"/>
+                <constraint firstAttribute="trailing" secondItem="dht-ye-bkB" secondAttribute="trailing" constant="20" id="MTd-53-eou"/>
+                <constraint firstAttribute="trailing" secondItem="5Lf-Kh-SSL" secondAttribute="trailing" id="Qvx-nb-aK9"/>
+                <constraint firstItem="0qk-Dd-wlX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="AGP-0t-1Ii" secondAttribute="bottom" constant="20" id="TwM-ss-kYX"/>
+                <constraint firstItem="5Lf-Kh-SSL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="aae-8s-YOQ"/>
+                <constraint firstItem="dht-ye-bkB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="90" id="hgc-3X-P9s"/>
+                <constraint firstAttribute="trailing" secondItem="AGP-0t-1Ii" secondAttribute="trailing" constant="20" id="ixh-11-0Rq"/>
+                <constraint firstAttribute="bottom" secondItem="5Lf-Kh-SSL" secondAttribute="bottom" id="jBq-Sp-wqm"/>
+                <constraint firstItem="5Lf-Kh-SSL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mzv-gl-XRM"/>
+                <constraint firstItem="AGP-0t-1Ii" firstAttribute="top" secondItem="dht-ye-bkB" secondAttribute="bottom" constant="5" id="ppo-8l-71N"/>
+            </constraints>
+            <size key="customSize" width="324" height="457"/>
+            <connections>
+                <outlet property="backgroundImageView" destination="5Lf-Kh-SSL" id="Xzo-vf-1uf"/>
+                <outlet property="descriptionLabel" destination="AGP-0t-1Ii" id="e2U-hC-D5e"/>
+                <outlet property="titleLabel" destination="dht-ye-bkB" id="JoX-20-L10"/>
+            </connections>
+            <point key="canvasLocation" x="154" y="84.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

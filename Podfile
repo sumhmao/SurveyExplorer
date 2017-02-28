@@ -9,6 +9,7 @@ target 'SurveyExplorer' do
   pod 'SwiftyJSON', '~> 3.1.4'
   pod 'Locksmith', '~> 3.0.0'
   pod 'SwiftSpinner', '~> 1.1.0'
+  pod 'Kingfisher', '~> 3.5.0'
 
   target 'SurveyExplorerTests' do
     inherit! :search_paths

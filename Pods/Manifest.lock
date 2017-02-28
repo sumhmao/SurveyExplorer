@@ -1,21 +1,24 @@
 PODS:
   - Alamofire (4.3.0)
+  - Kingfisher (3.5.0)
   - Locksmith (3.0.0)
   - SwiftSpinner (1.1.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.3.0)
+  - Kingfisher (~> 3.5.0)
   - Locksmith (~> 3.0.0)
   - SwiftSpinner (~> 1.1.0)
   - SwiftyJSON (~> 3.1.4)
 
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  Kingfisher: 7c62087039d93d26c54c8dd9b0b588d2ce55cef6
   Locksmith: 310b4cc5031af5728bf4db5d4de547a5100c6a3b
   SwiftSpinner: c03815614599b91eea46594bd52ba742849d0414
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 15d6cdcdaf3e604afc9938f1a92af40c482ae488
+PODFILE CHECKSUM: 3b8fd2c0beea3c934b6ec8d056099665a804cd3c
 
 COCOAPODS: 1.2.0

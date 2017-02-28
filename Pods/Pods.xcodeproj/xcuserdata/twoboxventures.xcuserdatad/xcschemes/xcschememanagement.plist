@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Kingfisher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Locksmith.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,17 +42,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>05ABF15A284482347D6A879EB28EF72E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>3014DF41BB5129FF79D30931BE83DA01</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>51601BC3E7B7AA17207CFE1508179E12</key>
+		<key>7761D2F83C4D7A78D1B6B8BD60BD8C7F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +57,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C7F727D48928BF47D913AFC48BB6A978</key>
+		<key>8DB3C686F8F0C84573F7E70FA115B82B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E4B271BBCFB58C70F93F53916C55A28C</key>
+		<key>A83F529012D107117AE027F925E41F5F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C4944FEC314D1A66588651D006273ADE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C7F727D48928BF47D913AFC48BB6A978</key>
 		<dict>
 			<key>primary</key>
 			<true/>
